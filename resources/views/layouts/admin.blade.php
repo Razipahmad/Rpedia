@@ -7,8 +7,8 @@
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
     <!-- Nucleo Icons -->
-    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="{{ asset('admin/css/nucleo-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/css/nucleo-svg.css') }}" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Material Icons -->
@@ -22,16 +22,19 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
     <!-- Styles -->
-    <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/css/bootstrap.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/css/bootstrap.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('admin/css/material-dashboard.css') }}" rel="stylesheet">
 
 </head>
 <body>
+
     
+    <script src="{{ asset('admin/js/core/popper.min.js') }}" defer></script>
+    <script src="{{ asset('admin/js/core/bootstrap.min.js') }}" defer></script>
+    <script src="{{ asset('admin/js/plugins/perfect-scrollbar.min.js') }}" defer></script>
+    <script src="{{ asset('admin/js/plugins/smooth-scrollbar.min.js') }}" defer></script>
+    <script src="{{ asset('admin/js/plugins/chartjs.min.js') }}" defer></script>
 </body>
 </html>
