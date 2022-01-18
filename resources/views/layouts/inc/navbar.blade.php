@@ -16,25 +16,35 @@
           </div>
         </div>
         <ul class="navbar-nav  justify-content-end">
-          <li class="nav-item d-flex align-items-center">
-            <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
-              <i class="fa fa-user me-sm-1"></i>
-              <span class="d-sm-inline d-none">Sign In</span>
-            </a>
-          </li>
-          <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-            <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
-              <div class="sidenav-toggler-inner">
-                <i class="sidenav-toggler-line"></i>
-                <i class="sidenav-toggler-line"></i>
-                <i class="sidenav-toggler-line"></i>
-              </div>
-            </a>
-          </li>
-          <li class="nav-item px-3 d-flex align-items-center">
-            <a href="javascript:;" class="nav-link text-body p-0">
-              <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
-            </a>
+          {{-- <li class="nav-item d-flex align-items-center">
+            <a href="javascript:;" class="nav-link text-body font-weight-bold px-0"> --}}
+              {{-- <i class="fa fa-user me-sm-1"></i> --}}
+              {{-- <span class="d-sm-inline d-none">Sign In</span> --}}
+              <li class="nav-item d-flex pe-3 align-items-center dropdown">
+                <a class="nav-link dropdown-toggle nav-link text-body font-weight-bold px-0" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-user me-sm-1"></i> <span class="d-sm-inline d-none">{{ Auth::user()->name }}</span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="#">My Profile</a>
+                </li>
+                <li>
+                  <a class="dropdown-item">
+                    Setting
+                  </a>
+                </li>
+                <li><a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form></li>
+                </ul>
+            {{-- </li>
+            </a> --}}
           </li>
           <li class="nav-item dropdown pe-2 d-flex align-items-center">
             <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
