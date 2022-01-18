@@ -22,19 +22,35 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
     <!-- Styles -->
     {{-- <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/bootstrap.css') }}" rel="stylesheet"> --}}
-    <link href="{{ asset('admin/css/material-dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/css/material-dashboard.css?v=3.0.0') }}" rel="stylesheet">
 
 </head>
-<body>
+<body class="g-sidenav-show  bg-gray-200">
+    @include('layouts.inc.sidebar')
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+            @include('layouts.inc.navbar')
 
+            <div class="content">
+                @yield('content')
+            </div>
+            
+            @include('layouts.inc.footer')
+        </main>
     
     <script src="{{ asset('admin/js/core/popper.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/core/bootstrap.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/plugins/perfect-scrollbar.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/plugins/smooth-scrollbar.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/plugins/chartjs.min.js') }}" defer></script>
+
+    @yield('script')
 </body>
 </html>
