@@ -41,7 +41,7 @@ class CategoryController extends Controller
         $category->meta_keywords = $request->input('meta_keywords');
         $category->meta_description = $request->input('meta_description');
         $category->save();
-        return redirect('/dashboard')->with('status',"Category added successfuly");
+        return redirect('/category')->with('status',"Category added successfuly");
     }
     
     public function edit($id)
@@ -74,7 +74,7 @@ class CategoryController extends Controller
         $category->meta_keywords = $request->input('meta_keywords');
         $category->meta_description = $request->input('meta_description');
         $category->update();
-        return redirect('/categories')->with('status',"Category updated successfuly");
+        return redirect('/category')->with('status',"Category updated successfuly");
     }
 
     public function destroy($id)
@@ -87,7 +87,7 @@ class CategoryController extends Controller
             }
         }
         $category->delete();
-        return redirect('/categories')->with('status',"Category deleted successfuly");
+        return redirect('/category')->with('status',"Category deleted successfuly");
 
     }
 }

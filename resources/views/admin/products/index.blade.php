@@ -12,7 +12,7 @@
                     <h6 class="text-white text-capitalize ps-3">Category List</h6>
                   </div>
                 <div class="col-6 text-end">
-                    <a class="btn bg-gradient-dark mb-0 me-3" href="/add-categories"><i class="material-icons text-sm">add</i>&nbsp;&nbsp;Add New Category</a>
+                    <a class="btn bg-gradient-dark mb-0 me-3" href="/add-products"><i class="material-icons text-sm">add</i>&nbsp;&nbsp;Add New Product</a>
                 </div>
               </div>
             </div>
@@ -24,13 +24,16 @@
                   <tr>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Category</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Short Description</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Price</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Promo Price</th>
                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image</th>
                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($category as $item)
+                    @foreach ($products as $item)
                         <tr>
                             <td>
                                 <div class="d-lex px-2 py-1">
@@ -41,17 +44,26 @@
                                 <h6 class="mb-0 text-sm">{{ $item->name}}</h6>
                             </td>
                             <td>
-                                <span class="text-secondary text-xs font-weight-bold">{{ $item->description}}</span>
+                              <h6 class="mb-0 text-sm">{{ $item->category->name}}</h6>
+                            </td>
+                            <td>
+                                <span class="text-secondary text-xs font-weight-bold">{{ $item->small_description}}</span>
+                            </td>
+                            <td>
+                                <span class="text-secondary text-xs font-weight-bold">{{ $item->original_price}}</span>
+                            </td>
+                            <td>
+                                <span class="text-secondary text-xs font-weight-bold">{{ $item->selling_price}}</span>
                             </td>
                             <td class="align-middle text-center">
-                                <img src="{{ asset('assets/uploads/category/'.$item->image) }}" alt="img-blur-shadow" style="height: 70px; width:auto;" class="img-fluid shadow border-radius-xl">
+                                <img src="{{ asset('assets/uploads/products/'.$item->image) }}" alt="img-blur-shadow" style="height: 70px; width:auto;" class="img-fluid shadow border-radius-xl">
                             </td>
                             <td class="align-middle text-center">
-                                <a href="{{ url('edit-category/'.$item->id) }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                <a href="{{ url('edit-product/'.$item->id) }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                     Edit
                                 </a>
                                 <span> | </span>
-                                <a href="{{ url('delete-category/'.$item->id) }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                <a href="{{ url('delete-product/'.$item->id) }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                     Delete
                                 </a>
                             </td>
