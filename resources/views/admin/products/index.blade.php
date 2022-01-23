@@ -50,10 +50,10 @@
                                 <span class="text-secondary text-xs font-weight-bold">{{ $item->small_description}}</span>
                             </td>
                             <td>
-                                <span class="text-secondary text-xs font-weight-bold">{{ $item->original_price}}</span>
+                                <span class="text-secondary text-xs font-weight-bold">Rp. {{ $item->original_price}}</span>
                             </td>
                             <td>
-                                <span class="text-secondary text-xs font-weight-bold">{{ $item->selling_price}}</span>
+                                <span class="text-secondary text-xs font-weight-bold">Rp. {{ $item->selling_price}}</span>
                             </td>
                             <td class="align-middle text-center">
                                 <img src="{{ asset('assets/uploads/products/'.$item->image) }}" alt="img-blur-shadow" style="height: 70px; width:auto;" class="img-fluid shadow border-radius-xl">

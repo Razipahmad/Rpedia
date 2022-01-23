@@ -40,12 +40,12 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="">Original Price</label>
-                        <input type="text" name="original_price" value="{{$product->original_price}}" id="" class="form-control" onkeypress=" return onlyNumberKey(event)">
+                        <input type="text" name="original_price" value="{{$product->original_price}}" placeholder="{{$product->original_price}}" id="" class="form-control" onkeypress=" return onlyNumberKey(event)">
                     </div>
 
                     <div class="col-md-6 mb-3">
                         <label for="">Selling Price</label>
-                        <input type="text" name="selling_price" value="{{$product->selling_price}}" id="" class="form-control" onkeypress=" return onlyNumberKey(event)">
+                        <input type="text" name="selling_price" value="{{$product->selling_price}}" placeholder="{{$product->selling_price}}" id="" class="form-control" onkeypress=" return onlyNumberKey(event)">
                     </div>
 
                     <div class="col-md-6 mb-3">
@@ -83,17 +83,17 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="">Meta Title</label>
-                        <input type="text" name="meta_title" value="{{$product->meta_title}} id="" class="form-control">
+                        <input type="text" name="meta_title" value="{{$product->meta_title}}" class="form-control">
                     </div>
 
                     <div class="col-md-6 mb-3">
                         <label for="">Meta Description</label>
-                        <input type="text" name="meta_description" value="{{$product->meta_description}} id="" class="form-control">
+                        <input type="text" name="meta_description" value="{{$product->meta_description}}" class="form-control">
                     </div>
 
                     <div class="col-md-6 mb-3">
                         <label for="">Meta Keywords</label>
-                        <input type="text" name="meta_keywords" value="{{$product->meta_keywords}} id="" class="form-control">
+                        <input type="text" name="meta_keywords" value="{{$product->meta_keywords}}" class="form-control">
                     </div>
 
                     <div class="col-md-6 mb-3">

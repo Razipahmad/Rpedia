@@ -40,7 +40,7 @@ class ProductController extends Controller
         $products->slug = $request->input('slug');
         $products->small_description = $request->input('short_description');
         $products->description = $request->input('description');
-        $products->original_price = $request->input('original_price');
+        $products->original_price =$request->input('original_price');
         $products->selling_price = $request->input('selling_price');
         $products->tax = $request->input('tax');
         $products->QTY = $request->input('QTY');
@@ -75,8 +75,8 @@ class ProductController extends Controller
         $products->slug = $request->input('slug');
         $products->small_description = $request->input('short_description');
         $products->description = $request->input('description');
-        $products->original_price = "RP.". $request->input('original_price');
-        $products->selling_price = "RP.". $request->input('selling_price');
+        $products->original_price = $request->input('original_price');
+        $products->selling_price = $request->input('selling_price');
         $products->tax = $request->input('tax');
         $products->QTY = $request->input('QTY');
         $products->status = $request->input('status') == TRUE ? '1':'0';
